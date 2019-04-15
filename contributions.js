@@ -25,6 +25,7 @@ var db = require("./database.js");
 
 function displayContributions(req,res,next)
 {
+	"use strict";
     displayContributions0(req,res,next,false);
 }
 
@@ -32,6 +33,7 @@ function displayContributions(req,res,next)
 
 function displayContributions0(req,res,next,sts)
 {
+	"use strict";
    var userid = req.session.userId;
 
    var q = "SELECT * FROM Contributions WHERE userId = " + userid;
@@ -42,6 +44,7 @@ function displayContributions0(req,res,next,sts)
 
 function displayContributions1(req,res,next,sts,err,data)
 {
+	"use strict";
    if (err) return next(err);
 
    var contrib = data.rows[0];
@@ -61,10 +64,11 @@ function displayContributions1(req,res,next,sts,err,data)
 
 function handleContributionsUpdate(req,res,next)
 {
+	"use strict";
    // convert to numbers
-   var preTax = eval(req.body.preTax);
-   var afterTax = eval(req.body.afterTax);
-   var roth = eval(req.body.roth);
+   var preTax = parseInt(req.body.preTax);
+   var afterTax = parseInt(req.body.afterTax);
+   var roth = parseInt(req.body.roth);
 
    var userId = req.session.userId;
 
@@ -91,6 +95,7 @@ function handleContributionsUpdate(req,res,next)
 
 function handleContributionsUpdate1(req,res,next,err,data)
 {
+	"use strict";
    if (err) return next(err);
 
    return displayContributions0(req,res,next,true);
