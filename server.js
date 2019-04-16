@@ -124,15 +124,15 @@ function setup()
    // Error handling middleware
    app.use(errorHandler);
 
-   swig.init({
-      root: _dirname: "/app/views",
-      autoescape: true
-   });
+   // swig.init({
+   //    root: _dirname: "/app/views",
+   //    autoescape: true
+   // });
 
    // Template system setup
-  //  swig.setDefaults({
-	 // autoescape: false
-  //   });
+   swig.setDefaults({
+	 autoescape: true
+    });
 
    var server = app.listen(8080);
 
