@@ -50,6 +50,10 @@ function setup()
    app.use(bodyParser.urlencoded({ extended: false }));
 
    app.use(session({ secret: process.env.COOKIE_SECRET,
+           cookie: {
+               httpOnly:true,
+               secure:true
+           },
 		     saveUninitialized: true,
 		     resave: true }));
 
@@ -119,9 +123,10 @@ function setup()
    // Error handling middleware
    app.use(errorHandler);
 
+
    // Template system setup
    swig.setDefaults({
-	 autoescape: false
+	 autoescape: true
     });
 
    var server = app.listen(8080);
