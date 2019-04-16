@@ -394,7 +394,7 @@ function displayWelcomePage1(req,res,next,err,data)
 /*										*/
 /********************************************************************************/
 
-exports.isAdminUserMiddleware = isAdminUserMiddleware;
+exports.isAdminUserMiddlewarr = isAdminUserMiddleware;
 exports.isLoggedInMiddleware = isLoggedInMiddleware;
 exports.displayLoginPage = displayLoginPage;
 exports.handleLoginRequest = handleLoginRequest;
