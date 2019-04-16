@@ -50,12 +50,13 @@ function setup()
    app.use(bodyParser.urlencoded({ extended: false }));
 
    app.use(session({ secret: process.env.COOKIE_SECRET,
-            // cookie: {
-            //    httpOnly: true,
-            //    secure: true
-            // },
-		     saveUninitialized: true,
-		     resave: true }));
+            cookie: {
+               httpOnly: true,
+               secure: true
+            }
+            }));
+		     //saveUninitialized: true,
+		     //resave: true }));
 
    // Register templating engine
    app.engine(".html", consolidate.swig);
@@ -130,7 +131,7 @@ function setup()
 
    // Template system setup
    swig.setDefaults({
-	 autoescape: true
+	 autoescape: false
     });
 
    var server = app.listen(8080);
