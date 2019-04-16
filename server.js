@@ -129,9 +129,9 @@ function setup()
    });
 
    // Template system setup
-   //swig.setDefaults({
-	 //autoescape: false
-    //});
+   swig.setDefaults({
+	 autoescape: false
+    });
 
    var server = app.listen(8080);
 
