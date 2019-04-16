@@ -134,7 +134,8 @@ function setup()
 	 autoescape: true
     });
 
-   var server = app.listen(8080);
+   var server = app.li
+   sten(8080);
 
    console.log("Listening on " + 8080);
 }
